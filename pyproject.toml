@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "hyper_ck"
+version = "0.1.0"
+description = "Hypermordern Python Tutorial"
+license = "MIT"
+homepage = "https://github.com/kipkurui/hyper_ck"
+repository = "https://github.com/kipkurui/hyper_ck"
+keywords = ["hypermodern"]
+
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+click = "^8.1.5"
+requests = "^2.31.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+coverage = {extras = ["toml"], version = "^7.2.7"}
+pytest-cov = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+hyper_ck = "hyper_ck.console:main"
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["hyper_ck"]
+
+[tool.coverage.report]
+show_missing = true
